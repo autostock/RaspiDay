@@ -1,4 +1,4 @@
-Ich  habe einen IR USB Stick für meinen raspberry. Wenn ich den einstecke und auf einer IR Fernbedienung eine Taste drücke liefert
+Ich  habe einen IR USB Stick fÃ¼r meinen raspberry. Wenn ich den einstecke und auf einer IR Fernbedienung eine Taste drÃ¼cke liefert
 ```/dev/lirc0``` die empfangenen Impuls Timings:
 
 ```bash
@@ -23,17 +23,17 @@ Resultat:
 ...
 ```
 
-Auch diese kann ich mittels mosquitto_pub, Zeile für Zeile versenden:
+Auch diese kann ich mittels mosquitto_pub, Zeile fÃ¼r Zeile versenden:
 ```bash
 od -t x4 -w4 -v /dev/lirc0 | mosquitto_pub -t /sensor/lirc0 -l
 ```
 
 So ein Tastendruck auf der IR Fernbedienung erzeugt viele Zeilen und entsprechend Verkehr mit dem MQTT broker.
 Um die Lage zu entspannen habe ich einen kleines C-Programm geschrieben (siehe ```c/timedflush.c```) welches
-Bytes binär aus stdin liest, in Hex umwandelt und ein NL plus fflush sendet wenn stdin eine Pause von X ms macht.
+Bytes binÃ¤r aus stdin liest, in Hex umwandelt und ein NL plus fflush sendet wenn stdin eine Pause von X ms macht.
 Dann kann man wie folgt schreiben und hat nur eine Zeile und damit nur eine MQTT Message pro Tastendruck.
 ```bash
-od -t x4 -w4 -v /dev/lirc0 | timedflush -t 180 | mosquitto_pub -t /sensor/lirc0 -l
+cat /dev/lirc0 | timedflush -t 180 | mosquitto_pub -t /sensor/lirc0 -l
 ```
 Resultat:
 ```
@@ -41,7 +41,7 @@ ffffff009203000192030000f2060001920300005f0300019203000092030001920300005f030001
 ...
 ```
 
-```timedflush``` läßt sich auf dem raspberry wie folgt compilieren:
+```timedflush``` lÃ¤ÃŸt sich auf dem raspberry wie folgt compilieren:
 ```
 g++ -o timedflush timedflush.c
 ```
