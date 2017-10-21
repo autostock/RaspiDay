@@ -10,4 +10,4 @@ stundenlang gut. Allerdings bricht es schon bei leichtem Stress (zu viele Messag
 Daraufhin bin ich auf den *PubSubClient* Client umgestiegen (https://pubsubclient.knolleary.net/index.html).
 Dazu musste ich ihn auf den Yun umstellen. Der läuft viel besser als *Adafruit_MQTT*.
 
-Das Programm abonniert das Topic "/actor/linoino" und reagiert auf Messages mit den Inhalten "4", "5", ... oder "9" indem es die Farbe einer angeschlossenen LED Kette ändert.
+Der Arduino Sketch *mqtt_basic* abonniert das Topic "/actor/linoino" und reagiert auf Messages mit den Inhalten "4", "5", ... oder "9" indem es die Farbe einer angeschlossenen LED Kette ändert.
