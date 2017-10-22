@@ -14,3 +14,6 @@ Im Szenario spielen 3 Raspberrys zusammen.
 
 Optional:
 - Raspberry 4 abonniert vom MQTT Server und visualisiert die Sensorzustände (https://plot.ly/python ?).
+
+
+[[https://github.com/autostock/RaspiDay/blob/master/day1/20170924_161526.jpg]]
