@@ -16,13 +16,13 @@ Optional:
 - Raspberry 4 abonniert vom MQTT Server und visualisiert die Sensorzustände (https://plot.ly/python ?).
 
 # Hilfreiche Links
-http://www.instructables.com/id/Installing-MQTT-BrokerMosquitto-on-Raspberry-Pi/
-http://kevinboone.net/mosquitto-test.html
-https://pubsubclient.knolleary.net/index.html
-https://mosquitto.org
-https://mosquitto.org/man/mqtt-7.html
-http://www.eclipse.org/paho
-http://wiki.eclipse.org/Paho
-https://github.com/eclipse/paho.mqtt.java
+- http://www.instructables.com/id/Installing-MQTT-BrokerMosquitto-on-Raspberry-Pi/
+- http://kevinboone.net/mosquitto-test.html
+- https://pubsubclient.knolleary.net/index.html
+- https://mosquitto.org
+- https://mosquitto.org/man/mqtt-7.html
+- http://www.eclipse.org/paho
+- http://wiki.eclipse.org/Paho
+- https://github.com/eclipse/paho.mqtt.java
 
 ![alt text](https://github.com/autostock/RaspiDay/blob/master/day1/20170924_161526.jpg)
