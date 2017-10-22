@@ -22,3 +22,7 @@ mosquitto_pub –t /sensor/test –m "hello world"
 
 ```
 Resultat: Im Terminal 2 erscheint ```hello world```
+
+Installiere MQTT auf Windows 10 Home :-(
+===
+Das ist mir bisher nicht gelungen wg. Problemen mit der OpenSSH Komponente.
