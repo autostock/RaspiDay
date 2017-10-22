@@ -1,3 +1,10 @@
+/**
+ *
+ * Auf dem Raspberry compiliert durch:
+ *   g++ -o timedflush timedflush.c
+ *
+ */
+
 #include <ctype.h>
 #include <sys/time.h>
 #include <fcntl.h>
