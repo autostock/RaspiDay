@@ -15,11 +15,10 @@ Resultat:
 0000030 0000035f
 0000034 01000392
 0000040 0000035f
-0000044 010003c5
-0000050 0000035f
-0000054 01000392
-0000060 0000035f
-0000064 01000392
+...
+0000304 0100035f
+0000310 00000724
+0000314 01000392
 ...
 ```
 
@@ -28,7 +27,7 @@ Auch diese kann ich mittels mosquitto_pub, Zeile für Zeile versenden:
 od -t x4 -w4 -v /dev/lirc0 | mosquitto_pub -t /sensor/lirc0 -l
 ```
 
-So ein Tastendruck auf der IR Fernbedienung erzeugt viele Zeilen und entsprechend Verkehr mit dem MQTT broker.
+So ein Tastendruck auf der IR Fernbedienung erzeugt viele Zeilen (im Beispiel oben sind es 205 Zeilen) und entsprechend Verkehr mit dem MQTT broker.
 Um die Lage zu entspannen habe ich einen kleines C-Programm geschrieben (siehe ```c/timedflush.c```) welches
 Bytes binär aus stdin liest, in Hex umwandelt und ein NL plus fflush sendet wenn stdin eine Pause von X ms macht.
 Dann kann man wie folgt schreiben und hat nur eine Zeile und damit nur eine MQTT Message pro Tastendruck.
