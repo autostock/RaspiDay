@@ -5,6 +5,7 @@ Ich habe mich für den mosquitto broker entschieden.
 sudo apt-get update
 sudo apt-get install mosquitto
 sudo apt-get install mosquitto-clients
+sudo apt-get install libmosquitto-dev # für Entwicklung
 ```
 MQTT mosquitto testen
 ===
