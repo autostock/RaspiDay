@@ -45,7 +45,8 @@ ffffff009203000192030000f2060001920300005f0300019203000092030001920300005f030001
 g++ -o timedflush timedflush.c
 ```
 
-!Andere
+Andere
+===
 ```bash
 cat /dev/lirc0 | ./timedflush  -t 180 | mosquitto_pub -t /sensor/lirc0 -l
 cat /dev/input/by-id/usb-0402_ADC-joystick  | ./timedflush  -c 8 | mosquitto_pub -t /sensor/e-sky -l
