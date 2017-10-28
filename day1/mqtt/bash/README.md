@@ -44,3 +44,11 @@ ffffff009203000192030000f2060001920300005f0300019203000092030001920300005f030001
 ```
 g++ -o timedflush timedflush.c
 ```
+
+!Andere
+```bash
+cat /dev/lirc0 | ./timedflush  -t 180 | mosquitto_pub -t /sensor/lirc0 -l
+cat /dev/input/by-id/usb-0402_ADC-joystick  | ./timedflush  -c 8 | mosquitto_pub -t /sensor/e-sky -l
+cat /dev/input/by-id/usb-DragonRise_Inc._Generic_USB_Joystick-joystick | ./timedflush -c 8 | mosquitto_pub -t /sensor/joystick -l
+cat /dev/midi1 | ./tr -c 18 -t 10 | mosquitto_pub -t /sensor/midi1 -l
+```
