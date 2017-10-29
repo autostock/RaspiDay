@@ -4,7 +4,7 @@ Wir fanden folgende Lösung. Allerdings war unsere Fritz.box damit überfordert.
 Fortan war es zielführender den Rechner via "192.168.5.47" statt "raspberrypi3" an zu sprechen. 
 
 ```bash
-vi /etc/network/interfaces
+sudo vi /etc/network/interfaces
 ```
 
 ```bash
