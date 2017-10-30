@@ -4,10 +4,12 @@ P:\portable\putty\putty.exe -ssh pi@raspberrypi3
 ```
 
 ### Preserve bash history in multiple terminal windows
-https://unix.stackexchange.com/questions/1288/preserve-bash-history-in-multiple-terminal-windows
 
 Add the following to ~/.bashrc
 ```bash
+#
+#https://unix.stackexchange.com/questions/1288/preserve-bash-history-in-multiple-terminal-windows
+
 # Avoid duplicates
 export HISTCONTROL=ignoredups:erasedups  
 # When the shell exits, append to the history file instead of overwriting it
@@ -32,7 +34,7 @@ sudo mkdir /raspiday
 sudo mount -t cifs -o rw,file_mode=0777,dir_mode=0777,username=raspiday,password=raspiday //fritz.box/FRITZ.NAS/SanDisk-Ultra-01/raspiday /raspiday
 ls -l /raspiday
 ```
-(Schön dabei: Das Raspian kenn die cifs Treiber ohne zusätzlich Installation.)
+(Schön dabei: Das raspbian kenn die cifs Treiber ohne zusätzlich Installation.)
 
 ### Den "raspberrypi3" (mosquitto broker) umstellen auf feste IP Adresse
 Wir fanden folgende Lösung. Allerdings war unsere Fritz.box damit überfordert.
