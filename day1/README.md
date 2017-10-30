@@ -36,8 +36,30 @@ ls -l /raspiday
 ```
 (Schön dabei: Das raspbian kenn die cifs Treiber ohne zusätzlich Installation.)
 
+### VNC-Server für Raspi: Konfiguration und Ändern der Auflösung:
+Aus https://www.elektronik-kompendium.de/sites/raspberry-pi/2011121.htm
+
+Konfiguration mit voller Auflösung:
+
+-scale ist die "Lösung" <breite in pix.>x<hoehe in pix.>
+
+```bash
+[Unit]
+Description=Start X11VNC
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/x11vnc -display :0 -scale 1920x1080 -auth guess -forever -lo$
+
+[Install]
+WantedBy=multi-user.target
+```
+
 ### Den "raspberrypi3" (mosquitto broker) umstellen auf feste IP Adresse
-Wir fanden folgende Lösung. Allerdings war unsere Fritz.box damit überfordert.
+Wir fanden folgende Lösung. 
+https://www.raspberrypi-spy.co.uk/2012/11/how-to-rename-your-raspberry-pi/
+Allerdings war unsere Fritz.box damit überfordert.
 Fortan war es zielführender den Rechner via "192.168.5.47" statt "raspberrypi3" an zu sprechen. 
 
 ```bash

@@ -15,7 +15,10 @@ Im Szenario spielen 3 Raspberrys zusammen.
 Optional:
 - Raspberry 4 abonniert vom MQTT Server und visualisiert die Sensorzustände (https://plot.ly/python ?).
 
-# Hilfreiche Links
+## Hilfreiche Links
+
+- Generell: gute Übersicht über alle möglichen Raspi-Themen: https://www.elektronik-kompendium.de/sites/raspberry-pi/2011121.htm
+- php7 und lighttpd: https://www.kohta-pi.de/2017/03/12/raspberry-pi-webserver-einrichten/#PHP_installieren
 - http://www.instructables.com/id/Installing-MQTT-BrokerMosquitto-on-Raspberry-Pi/
 - http://kevinboone.net/mosquitto-test.html
 - https://pubsubclient.knolleary.net/index.html
