@@ -4,7 +4,7 @@
 2. Kopiere plot.htm (hier im Directory) nach /var/www/html/plotly/plot.htm
 3. Erzeuge eine Datei /var/www/html/plotly/testCO2.csv mit z.B. folgendem Inhalt:
 ```bash
-Datum, CO2
+Date, CO2
 2017-10-30 21:31:01, 1102
 2017-10-30 21:31:11, 1106
 2017-10-30 21:31:21, 1108
