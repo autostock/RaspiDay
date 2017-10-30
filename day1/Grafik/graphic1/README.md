@@ -22,7 +22,7 @@ Erzeugt solche Daten in _sensor_CO2
 ### Gnu Plot Skript graphic1.gp
 
 ```bash
-# Erzeugt eine PNG Datei aus Datei _sensor_CO2
+# Erzeugt eine PNG Datei aus Datei _sensor_CO2 in /var/www/html/graphic1/output.png
 set term png
 set output '/var/www/html/graphic1/output.png'
 set size 1, 1
@@ -41,3 +41,4 @@ Und starten:
 ```bash
 gnuplot -c graphic1.gp
 ```
+Display it http://192.168.5.47/graphic1/output.png
