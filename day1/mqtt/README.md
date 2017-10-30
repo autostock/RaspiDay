@@ -4,13 +4,18 @@ Ich habe mich für den mosquitto broker entschieden.
 ```bash
 sudo apt-get update
 sudo apt-get install mosquitto
+```
+ACHTUNG: Hierdurch läuft der Broker auch schon gleich.
+
+```bash
 sudo apt-get install mosquitto-clients
 sudo apt-get install libmosquitto-dev # für Entwicklung
 ```
 MQTT mosquitto testen
 ===
-Terminal 1: mosquitto broker starten:
+Terminal 1: mosquitto broker im Vordergrund starten:
 ```bash
+sudo service mosquitto stop
 mosquitto
 ```
 Terminal 2: mosquitto subscription client starten:
