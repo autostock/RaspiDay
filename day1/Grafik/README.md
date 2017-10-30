@@ -11,7 +11,7 @@ sudo apt-get install apache2 -y
 ```
 Check with http://raspberrpi3 or http://192.168.5.47
 
-### Set permissions on the web directory /var/www/
+#### Set permissions on the web directory /var/www/
 It is useful to change the permissions on the www directory to allow your user to update the webpages without needing to be root.
 
 ```bash
