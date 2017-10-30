@@ -1,3 +1,28 @@
+Preserve bash history in multiple terminal windows
+====
+https://unix.stackexchange.com/questions/1288/preserve-bash-history-in-multiple-terminal-windows
+
+Add the following to ~/.bashrc
+```bash
+# Avoid duplicates
+export HISTCONTROL=ignoredups:erasedups  
+# When the shell exits, append to the history file instead of overwriting it
+shopt -s histappend
+
+# After each command, append to the history file and reread it
+export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
+```
+
+Andere praktische Skripte im Umgang mit der bash
+====
+```bash
+# The script command is a Unix utility that records a terminal session. The scriptreplay command offers a replay function to script. The session is captured in file name typescript by default.
+script
+
+# If your local computer crashes or you lose the connection, the processes or login sessions you establish through screen don't go away.
+screen
+```
+
 Den "raspberrypi3" (mosquitto broker) umstellen auf feste IP Adresse
 ====
 Wir fanden folgende Lösung. Allerdings war unsere Fritz.box damit überfordert.
