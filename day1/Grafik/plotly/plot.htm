@@ -1,0 +1,38 @@
+<meta http-equiv="Context-Type" content="text/html; charset=UTF-8">
+<head>
+        <script src="plotly.js"></script>
+</head>
+<html>
+<div id="tester" style="width:600px;height:450px;"></div>
+<script>
+Plotly.d3.csv('./testCO2.csv', function(rows){
+    var trace = {
+      type: 'scatter',                    // set the chart type
+      mode: 'lines',                      // connect points with lines
+      x: rows.map(function(row){          // set the x-data
+        return row['Date'];
+      }),
+      y: rows.map(function(row){          // set the y-data
+        return row['CO2'];
+      }),
+      line: {                             // set the width of the line.
+        width: 1
+      },
+    };
+
+    var layout = {
+      yaxis: {title: "CO2"},       // set the y axis title
+      xaxis: {
+        title: "Date",
+        showgrid: false,                  // remove the x-axis grid lines
+        //tickformat: "%B, %Y"              // customize the date format to "month, day"
+      },
+      margin: {                           // update the left, bottom, right, top margin
+        l: 40, b: 70, r: 10, t: 20
+      }
+    };
+
+    Plotly.plot(document.getElementById('tester'), [trace], layout, {showLink: false});
+});
+</script>
+</html>
