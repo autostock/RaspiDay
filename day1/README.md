@@ -1,5 +1,9 @@
-Preserve bash history in multiple terminal windows
-====
+### Benutze Putty von der Command Line
+```bash
+P:\portable\putty\putty.exe -ssh pi@raspberrypi3
+```
+
+### Preserve bash history in multiple terminal windows
 https://unix.stackexchange.com/questions/1288/preserve-bash-history-in-multiple-terminal-windows
 
 Add the following to ~/.bashrc
@@ -13,8 +17,7 @@ shopt -s histappend
 export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 ```
 
-Andere praktische Skripte im Umgang mit der bash
-====
+### Andere praktische Skripte im Umgang mit der bash
 ```bash
 # The script command is a Unix utility that records a terminal session. The scriptreplay command offers a replay function to script. The session is captured in file name typescript by default.
 script
@@ -23,8 +26,15 @@ script
 screen
 ```
 
-Den "raspberrypi3" (mosquitto broker) umstellen auf feste IP Adresse
-====
+### Mount des Projektordners "raspiday" auf dem Memory Sticks an der Fritz.Box
+```bash
+sudo mkdir /raspiday
+sudo mount -t cifs -o rw,file_mode=0777,dir_mode=0777,username=raspiday,password=raspiday //fritz.box/FRITZ.NAS/SanDisk-Ultra-01/raspiday /raspiday
+ls -l /raspiday
+```
+(Schön dabei: Das Raspian kenn die cifs Treiber ohne zusätzlich Installation.)
+
+### Den "raspberrypi3" (mosquitto broker) umstellen auf feste IP Adresse
 Wir fanden folgende Lösung. Allerdings war unsere Fritz.box damit überfordert.
 Fortan war es zielführender den Rechner via "192.168.5.47" statt "raspberrypi3" an zu sprechen. 
 
