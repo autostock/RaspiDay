@@ -1,8 +1,8 @@
 ## Arduino mit Ethernet Shield als Web Server zur Grafikausgabe
 
-Die folgenden Dateien müssen hierfür auf der SD Karte sein
-* /index.htm
-* /plotly-latest.min.js
+Die folgenden Dateien müssen hierfür auf der SD Karte im Namensformat 8.3 sein
+* /index.htm (alias plot.ly.html)
+* /plotly.js (alias plotly-latest.min.js)
 
 ### Erfahrungsbericht
 Es funktioniert eingeschränkt. Grundsätzlich ist die Funktionalität da, 
