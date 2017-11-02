@@ -1,0 +1,22 @@
+<html>
+<head>
+<script type="text/javascript"
+  src="dygraph.min.js"></script>
+</head>
+<body>
+<div id="graphdiv"></div>
+<script type="text/javascript">
+  g = new Dygraph(
+    // containing div
+    document.getElementById("graphdiv"),
+    "testCO2.csv", // path to CSV file
+    {          // options
+//      valueRange: [0,1500],
+//      rollPeriod: 5,
+        height: 450,
+        width: 600
+        }
+  );
+</script>
+</body>
+</html>
