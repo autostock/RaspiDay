@@ -83,3 +83,45 @@ netmask 255.255.255.0
 gateway 192.168.5.1
 ```
 
+### Arduino IDE 1.8.5 auf dem Raspberry installieren
+
+Download Arduino IDE from www.arduino.cc. Then upack file.
+
+Dann:
+```bash
+rm Downloads/arduino-1.8.5-linuxarm.tar.xz
+mv Downloads/arduino-1.8.5/ /opt
+sudo mv Downloads/arduino-1.8.5/ /opt
+
+# touch .xdg-icon-resource-dummy otherwise it is missing during install.sh
+touch /home/pi/.local/share/icons/hicolor/.xdg-icon-resource-dummy
+cd /opt/arduino-1.8.5/
+./install.sh
+
+sudo /opt/arduino-1.8.5/arduino
+```
+
+####Auf dem Weg die Digistump Entwicklung auf Raspbian zu unterstützen
+
+Im Prinzip: https://digistump.com/wiki/digispark/tutorials/connecting allerdings läuft das alles nicht auf dem raspberry.
+
+```bash
+sudo vi /etc/udev/rules.d/49-micronucleus.rules
+
+git clone https://github.com/micronucleus/micronucleus.git
+cd micronucleus/commandline
+sudo apt-get install libusb-dev # sonst wird beim make über usb.h gemeckert.
+make
+./micronucleus #test -> ok
+
+mkdir -p /opt/arduino-1.8.5/hardware/digistump/avr/tools/
+cp micronucleus /opt/arduino-1.8.5/hardware/digistump/avr/tools/
+
+lsusb
+```
+
+Trotzdem meckert der Boardmanager über micronucleus :-(
+
+
+
+
