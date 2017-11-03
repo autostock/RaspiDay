@@ -85,7 +85,7 @@ gateway 192.168.5.1
 
 ### Arduino IDE 1.8.5 auf dem Raspberry installieren
 
-Download Arduino IDE from www.arduino.cc. Then upack file.
+Download Arduino IDE from www.arduino.cc. Then unpack file.
 
 Dann:
 ```bash
@@ -98,8 +98,12 @@ touch /home/pi/.local/share/icons/hicolor/.xdg-icon-resource-dummy
 cd /opt/arduino-1.8.5/
 ./install.sh
 
-sudo /opt/arduino-1.8.5/arduino
+lsusb
+
+/opt/arduino-1.8.5/arduino
 ```
+Der UNO wird erkannt uns lässt sich programmieren :-)
+
 
 ####Auf dem Weg die Digistump Entwicklung auf Raspbian zu unterstützen
 
@@ -117,7 +121,7 @@ make
 mkdir -p /opt/arduino-1.8.5/hardware/digistump/avr/tools/
 cp micronucleus /opt/arduino-1.8.5/hardware/digistump/avr/tools/
 
-lsusb
+sudo /opt/arduino-1.8.5/arduino
 ```
 
 Trotzdem meckert der Boardmanager über micronucleus :-(
