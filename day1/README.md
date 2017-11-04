@@ -84,7 +84,11 @@ gateway 192.168.5.1
 ```
 
 ### Arduino IDE 1.8.5 auf dem Raspberry installieren
-
+Des Folgende installiert leider nur die IDE Version 1.0.5.
+```bash
+sudo apt-get install arduino
+```
+Deshalb:
 * Download Arduino IDE from www.arduino.cc. 
 * Then unpack file.
 * Dann:
