@@ -1,3 +1,7 @@
+## MQTT Clients
+
+### Arduino Yun
+
 Ich  habe einen *Arduino Yun* den ich in das MQTT Szenario eingebunden habe.
 
 Zunächst habe ich dazu *Adafruit_MQTT* eingesetzt.
@@ -11,3 +15,9 @@ Daraufhin bin ich auf den *PubSubClient* Client umgestiegen (https://pubsubclien
 Dazu musste ich ihn auf den Yun umstellen. Der läuft viel besser als *Adafruit_MQTT*.
 
 Der Arduino Sketch *mqtt_basic* abonniert das Topic "/actor/linoino" und reagiert auf Messages mit den Inhalten "4", "5", ... oder "9" indem es die Farbe einer angeschlossenen LED Kette ändert.
+
+### ESP-12
+
+Auch der ESP-12 war im MQTT Szenario eingebunden.
+
+Auf Basis des *PubSubClient* Clients "published" dieser Sketch die, via AD, gemessenen CO2 Werte in ppm auf das Topic "/sensor/CO2".
