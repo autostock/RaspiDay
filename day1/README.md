@@ -110,24 +110,95 @@ Der UNO wird erkannt uns lässt sich programmieren :-)
 
 #### Auf dem Weg die Digistump Entwicklung auf Raspbian zu unterstützen
 
-Im Prinzip: https://digistump.com/wiki/digispark/tutorials/connecting allerdings läuft das alles nicht auf dem raspberry.
+Im Prinzip: https://digistump.com/wiki/digispark/tutorials/connecting 
+allerdings läuft das alles zunächst nicht auf dem raspberry.
 
+Nach folgenden Anpassungen läuft es:
+1. USB Devices vorbereiten.
+2. micronucleus manuell für Raspbian compilieren.
+3. Digistump Boardverwalter Datei änderen. (Keine Abhängigkeit von micronucleus mehr) 
+4. In Digistump platform.txt eintragen wo der manuell compilierte micronucleus zu finden ist.
+
+##### Im Einzelnen
+###### USB Devices vorbereiten
 ```bash
 sudo vi /etc/udev/rules.d/49-micronucleus.rules
 #Und dieses einfügen: https://digistump.com/wiki/digispark/tutorials/linuxtroubleshooting
+```
 
+###### micronucleus manuell für Raspbian compilieren.
+```bash
 git clone https://github.com/micronucleus/micronucleus.git
 cd micronucleus/commandline
 sudo apt-get install libusb-dev # sonst wird beim make über usb.h gemeckert.
 make
 ./micronucleus #test -> ok
-
-mkdir -p /opt/arduino-1.8.5/hardware/digistump/avr/tools/
-cp micronucleus /opt/arduino-1.8.5/hardware/digistump/avr/tools/
-
-sudo /opt/arduino-1.8.5/arduino
 ```
-Trotzdem meckert der Boardmanager über micronucleus :-(
+
+###### Digistump Boardverwalter Datei änderen. (Keine Abhängigkeit von micronucleus mehr) 
+Für Arduinos Boardverwalter darf nicht die Orginal Datei genommen werden.
+Vielmehr muss sie manuell herunter geladen werden und dann
+die Abhängigkeit vom micronucleus Tool gelöscht werden.
+Denn das micronucleus Tool wird für den Raspberry offiziell nicht unterstützt. 
+```bash
+cd ~
+wget http://digistump.com/package_digistump_index.json
+ls -l package_digistump_index.json # test -> ok
+```
+Jetzt mit einem Editor die Datei */home/pi/package_digistump_index.json* öffnen.
+Und die Abhängigkeit löschen. D.h. die folgenden Zeilen unter
+*packages -> platforms -> Digistump AVR Boards -> toolsDependencies
+löschen:
+```bash
+            },
+            {
+              "packager": "digistump",
+              "name": "micronucleus",
+              "version": "2.0a4"
+```
+
+Jetzt Arduino IDE starten und im Boardmanager obige Datei als
+```bash
+file:/home/pi/package_digistump_index.json
+```
+angeben und digispark Boards installieren.
+
+Arduino wieder beenden.
+
+###### In Digistump platform.txt eintragen wo der manuell compilierte micronucleus zu finden ist.
+Jetzt sollte die Datei "/home/pi/.arduino15/packages/digistump/hardware/avr/1.6.7/platform.txt" 
+existieren. Mit einem Editor öffnen und wie folgt anpassen:
+```bash
+...
+# AVR Uploader/Programmers tools
+# ------------------------------
+...
+###tools.micronucleus.cmd.path={runtime.tools.micronucleus.path}/launcher
+# change to:
+tools.micronucleus.cmd.path=/home/pi/micronucleus/commandline/micronucleus
+
+...
+###tools.micronucleus.upload.pattern="{cmd.path}" -cdigispark --timeout 60 -Uflash:w:{build.path}/{build.project_name}.hex:i
+# change to:
+tools.micronucleus.upload.pattern="{cmd.path}" -cdigispark --timeout 60 {build.path}/{build.project_name}.hex
+...
+```
+
+```bash
+/opt/arduino-1.8.5/arduino
+```
+
+Jetzt konnte ich den Digispark erfolgreich auf dem Raspberry programmieren. Zum Beispiel:
+*Examples -> DigisparkCDC -> CDC_LED
+oder
+*Examples -> DigisparkCDC -> Echo
+
+
+Leider funktioniert
+*Examples -> DigisparkCDC -> Print
+nicht. Da das Programm auf dem Digispark mit der Ausgabe startet bevor der 
+serielle Monitor der Arduino IDE
+die Verbindung hergestellt hat. Danach synchronisieren sich beide nicht mehr.
 
 
 
