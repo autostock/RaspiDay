@@ -1,3 +1,5 @@
+# Gedächnisstütze für Nützliches
+
 ### Benutze Putty von der Command Line
 ```bash
 P:\portable\putty\putty.exe -ssh pi@raspberrypi3
