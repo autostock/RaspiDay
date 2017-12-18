@@ -1,6 +1,6 @@
 # Robot
 
-Uns ist an diesem Tag tatsächlich ein improvisierter ferngesteuerter low tech Roboter (noch nicht autonom) auf Raspberry Basis gelungen.
+Uns ist an diesem Tag tatsächlich auch ein improvisierter, ferngesteuerter, low tech Roboter (d.h. noch nicht autonom) auf Raspberry Basis gelungen.
 Der Roboter steht auf einem Sektkorken mit Filzgleiter und zwei Conrad Motoren inklusive Getriebe. Des weiteren befinden sich
 im Robotergehäuse (Karton) ein Adafruit Motor Shield v2 auf einem Arduino UNO und eine 5V Powerbank. Auf dem Robotergehäuse befindet
 sich ein Raspberry Pi 3 (hier RPi Y genannt) und ein Breadboard welches über 3 LEDs den Zustand von Motor1 anzeigt und ein Ultraschall 
