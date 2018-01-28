@@ -91,20 +91,24 @@ Des Folgende installiert leider nur die IDE Version 1.0.5.
 sudo apt-get install arduino
 ```
 Deshalb:
-* Download Arduino IDE from www.arduino.cc. 
+* Download Arduino IDE from www.arduino.cc. https://www.arduino.cc/en/Main/Software and select for "Linux ARM"
 * Then unpack file.
 * Dann:
 ```bash
+tar -xvf Downloads/arduino-1.8.5-linuxarm.tar.xz
 rm Downloads/arduino-1.8.5-linuxarm.tar.xz
-sudo mv Downloads/arduino-1.8.5/ /opt
+sudo mv arduino-1.8.5/ /opt
 
 # touch .xdg-icon-resource-dummy otherwise it is missing during install.sh
+mkdir -p /home/pi/.local/share/icons/hicolor/
 touch /home/pi/.local/share/icons/hicolor/.xdg-icon-resource-dummy
 cd /opt/arduino-1.8.5/
 ./install.sh
 
+#plugin the UNO and check it
 lsusb
 
+#start arduino
 /opt/arduino-1.8.5/arduino
 ```
 Der UNO wird erkannt uns lässt sich programmieren :-)
@@ -201,7 +205,3 @@ Leider funktioniert
 nicht. Da das Programm auf dem Digispark mit der Ausgabe startet bevor der 
 serielle Monitor der Arduino IDE
 die Verbindung hergestellt hat. Danach synchronisieren sich beide nicht mehr.
-
-
-
-
