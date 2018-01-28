@@ -93,7 +93,9 @@ sudo apt-get install arduino
 Deshalb:
 * Download Arduino IDE from www.arduino.cc. https://www.arduino.cc/en/Main/Software and select for "Linux ARM"
 * Then unpack file.
-* Dann:
+* installieren und
+* starten
+Also:
 ```bash
 tar -xvf Downloads/arduino-1.8.5-linuxarm.tar.xz
 rm Downloads/arduino-1.8.5-linuxarm.tar.xz
