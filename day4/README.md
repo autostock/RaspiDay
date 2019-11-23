@@ -2,7 +2,8 @@
 
 KI lernen, ganz einfach und umsonst mit Google's TPU
 Hardware für Jedermann. Dies wird als "Google Colab" in:<br>
-- https://colab.research.google.com/notebooks/welcome.ipynb<br>
+- https://colab.research.google.com/notebooks/welcome.ipynb
+
 zur Verfügung gestellt. (Dazu braucht man einen Gmail Account. Reicht
 auch temporär.) Dort geht es weiter mit Python und dem Keras Framework
 was wiederum eine Abstraktionsebene für Tensorflow ist.
