@@ -401,6 +401,7 @@ font_labels = [5]
 probabilities = model.predict(pixim, steps=1)
 predicted_labels = np.argmax(probabilities, axis=1)
 print(predicted_labels)
+print(probabilities)
 display_digits(pixim, predicted_labels, font_labels, "predictions from local fonts (bad predictions in red)", N)
 
 

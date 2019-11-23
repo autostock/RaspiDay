@@ -40,7 +40,7 @@ Ziffernerkennung findet sich hier:<br>
 
 ```bash
 sudo apt-get update
-pip install keras
+#pip install keras
 #Problem after 30mins:
 # ('Loading library to get version:', 'libhdf5.so')
 #  error: libhdf5.so: cannot open shared object file: No such file or directory
@@ -105,20 +105,17 @@ python train_convnet.py
 ############################
 pip install IPython
 pip install -r visualisation_requirements.txt
-pip install imageio
 
-
-pip install imageio
-python my_tf.py
-sudo apt install python-pydot python-pydot-ng graphviz # python-pydot-ng isn't in the 14.04 repos
-#sudo apt install graphviz # python-pydot-ng isn't in the 14.04 repos
-python my_tf.py
-echo "digraph G {Hello->World}" | dot -Tpng >hello.png 
-
-py -m notebook
+python -m notebook
+# Bei mir hat der Umlaut gestört (Bei Andern nicht!)
 mv MNIST\ für\ Einsteiger.ipynb MNIST\ fur\ Einsteiger.ipynb 
 python -m notebook
 
+
+#############################
+# Bildverarbeitung
+#############################
+sudo apt-get install imagemagick
 
 dir=/tmp
 src=foto5.png
@@ -143,3 +140,10 @@ kann hier gerne übernachten.
 
 Wo nötig wird es wieder Codebeispiele geben unter:<br>
 - https://github.com/autostock/RaspiDay/tree/master/day4
+
+# Literatur
+- http://neuralnetworksanddeeplearning.com/index.html
+- https://codelabs.developers.google.com/codelabs/cloud-tensorflow-mnist/
+- https://keras.io/
+
+
