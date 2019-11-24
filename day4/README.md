@@ -137,7 +137,7 @@ Raspberry die Ziffern (hoffentlich) richtig erkennen.
 
 # Literatur
 
-- Codebeispiele geben unter: https://github.com/autostock/RaspiDay/tree/master/day4
+- Codebeispiele stehen unter: https://github.com/autostock/RaspiDay/tree/master/day4
 - http://neuralnetworksanddeeplearning.com/index.html
 - https://codelabs.developers.google.com/codelabs/cloud-tensorflow-mnist/
 - https://keras.io/
