@@ -38,27 +38,19 @@ trainieren lassen. (Ob ein Raspberry das schafft?) Das Beispiel zur
 Ziffernerkennung findet sich hier:<br>
 - http://ct.de/ycnd
 
+#### Voraussetzungen
+
 ```bash
 sudo apt-get update
-#pip install keras
-#Problem after 30mins:
-# ('Loading library to get version:', 'libhdf5.so')
-#  error: libhdf5.so: cannot open shared object file: No such file or directory
-#  
-#  ----------------------------------------
-#  Failed building wheel for h5py
-
-
-
-###############
-# Voraussetzungen
-###############
 
 # https://linoxide.com/linux-how-to/install-mongodb-ubuntu/
 # Step 1) Installing MongoDB on Ubuntu 18.04
 #Ubuntu's official package repositories comes with the latest version of MongoDB, which means we can install the necessary packages using apt-get.
 #we will install MongoDB package that includes several other packages such as mongo-tools, mongodb-clients, mongodb-server and mongodb-server-core.
+########
 # does not work on raspian OS because it needs 64bit environment.
+# So proceeded to Ubuntu Mate on raspberrypi. But see below when installing tensorflow :-(
+########
 sudo apt-get install -y mongodb
 
 # Step 2) Checking the Service and Database of MongoDB
@@ -74,10 +66,11 @@ sudo apt-get install python3-venv
 
 # install GIT
 sudo apt install git
+```
 
-#######################
-# jetzt kann's los gehen
-#######################
+#### jetzt kann's los gehen auf der Commandline
+
+```bash
 git clone https://github.com/pinae/Sacred-MNIST/
 cd Sacred-MNIST/
 
@@ -86,11 +79,13 @@ python3 -m venv env
 source env/bin/activate
 
 #Install the requirements:
-pip install wheel
+pip install wheel ## Nötig? Denn enthalten in requirements.txt .
 pip install -r requirements.txt
 
 #Install TensorFlow in the CPU-Version:
-# does not work on Raspian hardware. ERROR: No matching distribution found for tensorflow 
+########
+# does not work on Raspian hardware. ERROR: No matching distribution found for tensorflow :-(
+########
 pip install tensorflow
 #or GPU-Version:
 #pip install tensorflow-gpu
@@ -99,11 +94,12 @@ pip install tensorflow
 #To train the network simply run:
 python train_convnet.py
 
-############################
-# step by step
-# Voraussetzungen
-############################
-pip install IPython
+```
+
+#### Voraussetzungen für das Arbeiten mit dem jupyter notebook
+
+```bash
+pip install IPython ## Nötig?
 pip install -r visualisation_requirements.txt
 
 python -m notebook
@@ -111,10 +107,12 @@ python -m notebook
 mv MNIST\ für\ Einsteiger.ipynb MNIST\ fur\ Einsteiger.ipynb 
 python -m notebook
 
+```
 
-#############################
-# Bildverarbeitung
-#############################
+
+#### Bildverarbeitung
+
+```bash
 sudo apt-get install imagemagick
 
 dir=/tmp
@@ -127,23 +125,27 @@ convert -threshold 40% -negate -extract '500x500+1400+1000' -resize 28x28 $dir/$
 ```
 
 ### Das trainierte NN auf dem Raspberry anwenden
+VORAB:
+Es stellt sich heraus, dass der Raspberry (noch) nicht dazu in der Lage ist. Denn (siehe auch oben):
+- mongoDB wird nicht mehr für 32 Bit (Raspian OS) gepflegt.
+- Im 64 Bit OS (hier Ubuntu Mate) scheitert die Installation von tensorflow
+
+So war der Plan:
 Das trainierte NN wird auf meinen bzw. den mitgebrachten Raspberrys
 runter geladen. Jeder schreibt in seiner Handschrift einige Ziffern auf.
 Diese werden fotografiert und normiert. Mit denen gefüttert, sollte der
 Raspberry die Ziffern (hoffentlich) richtig erkennen.
 
-Dazu sollte jeder einen Laptop mit bringen (ein Raspberry sollte auch
-gehen  Wer vor 09:00 Uhr da ist kann gerne mit Frühstücken wenn er
-Brötchen mit bringt  Ich biete ein WLAN Gastnetz, zum Mittag
-Gulaschsuppe mit Kidneybohnen, Nervenfutter und Getränke. Wer möchte
-kann hier gerne übernachten.
+# Literatur
 
-Wo nötig wird es wieder Codebeispiele geben unter:<br>
+Wo nötig wird es wieder Codebeispiele geben unter:
 - https://github.com/autostock/RaspiDay/tree/master/day4
 
-# Literatur
+
 - http://neuralnetworksanddeeplearning.com/index.html
 - https://codelabs.developers.google.com/codelabs/cloud-tensorflow-mnist/
 - https://keras.io/
+- Schöne 3D-Visualisierung eines Convolutional Networks für MNIST: http://scs.ryerson.ca/~aharley/vis/conv/
+
 
 
