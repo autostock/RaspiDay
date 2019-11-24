@@ -102,7 +102,6 @@ python train_convnet.py
 pip install IPython ## Nötig?
 pip install -r visualisation_requirements.txt
 
-python -m notebook
 # Bei mir hat der Umlaut gestört (Bei Andern nicht!)
 mv MNIST\ für\ Einsteiger.ipynb MNIST\ fur\ Einsteiger.ipynb 
 python -m notebook
@@ -138,10 +137,7 @@ Raspberry die Ziffern (hoffentlich) richtig erkennen.
 
 # Literatur
 
-Wo nötig wird es wieder Codebeispiele geben unter:
-- https://github.com/autostock/RaspiDay/tree/master/day4
-
-
+- Codebeispiele geben unter: https://github.com/autostock/RaspiDay/tree/master/day4
 - http://neuralnetworksanddeeplearning.com/index.html
 - https://codelabs.developers.google.com/codelabs/cloud-tensorflow-mnist/
 - https://keras.io/
