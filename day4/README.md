@@ -135,8 +135,8 @@ runter geladen. Jeder schreibt in seiner Handschrift einige Ziffern auf.
 Diese werden fotografiert und normiert. Mit denen gefüttert, sollte der
 Raspberry die Ziffern (hoffentlich) richtig erkennen.
 
-Letztendlich haben wir es auf einem Ubuntu Laptop hin bekommen. Die Ziffer 5 wurde Hand geschrieben und ein fotoe (foto5.png) gemacht. Dann ein wenig Bildverarbeitung (siehe oben) um es an das von MNIST geforderte Format an zu passen.
-Das Resultat wurde in dig5.png abgespeichert, dem von uns trainierten Netz zum analysieren angeboten und - siehe da - es hat die 5 erkannt! :-)
+Letztendlich haben wir es auf einem Ubuntu Laptop hin bekommen. Die Ziffer 5 wurde Hand geschrieben und davon ein Foto (foto5.png) gemacht. Dann ein wenig Bildverarbeitung (siehe oben) um es an das von MNIST geforderte Format an zu passen.
+Das Resultat wurde in dig5.png abgespeichert, dem von uns trainierten Netz zum Analysieren angeboten und - siehe da - es hat die 5 erkannt! :-)
 
 # Literatur
 
