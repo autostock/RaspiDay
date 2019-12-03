@@ -9,8 +9,8 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
-    - name: configure
-      run: ./configure
     - name: make
       run: make ./day4/xor
+    - name: run
+      run: ./day4/xor
     
