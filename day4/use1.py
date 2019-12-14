@@ -2,6 +2,7 @@
 # coding: utf-8
 
 from keras.models import load_model
+import numpy as np, imageio 
 
 model=load_model('./myWeights.hdf5')
 
