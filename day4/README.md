@@ -23,9 +23,15 @@ zur Verfügung gestellt. (Dazu braucht man einen Gmail Account. Reicht
 auch temporär.) Dort geht es weiter mit Python und dem Keras Framework
 was wiederum eine Abstraktionsebene für Tensorflow ist.
 
-## In c't 21 war KI  Thema
+## In c't 21 war KI Thema
 In der c't 21 war KI mit Python und dem Keras Framework das Thema,
 inklusive hands on im c't Artikel ""Hallo Welt" der KI".
+
+Bzw. c't 22 Neuronale Netze mit 8-Bit-Integern [ct.de/yrjs](Byte-Intelligenz)
+
+## KI ohne tensorflow
+- [DL4J](https://deeplearning4j.org/): Als reine Java Lösung.
+
 
 ## Agenda
 ### Aufwärmen
