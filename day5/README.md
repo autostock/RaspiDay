@@ -51,10 +51,12 @@ python use1.py
 
 ## pm-Prognose mit NN 
 Könnte ein NN aus unseren Wetterdaten: tmp, hum, bmp, pm25 Daten und Wochentag von morgens um 6Uhr auf die pm25 Werte von 12Uhr des selben Tages schließen?
-(tmp, hum, bmp, pm25, dow)[6] -> (pm25)[12]
+(tmp, hum, bmp, pm25, dow)[06] -> (pm25)[12]
+
 Beispiel:
 
 ``` bash
+changes	date				tmp	hum	bmp	pm25	dow	map to	pm25
 10	2019-12-10 06:00:31.0	3,8	82,0	1024,0	3,5	3	-> 	5,5
 3	2019-12-09 06:00:32.0	7,0	72,0	997,0	1,5	2	-> 	1,5
 6	2019-12-08 06:00:32.0	9,5	71,0	1007,0	3,0	1	-> 	0,5
