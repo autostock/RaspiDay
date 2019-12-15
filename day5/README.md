@@ -1,6 +1,6 @@
 # Thema KI auf dem Raspberry 3 und 4
 
-## Trainieren und anschließend Anwenden eines NN auf einem Raspi mit tensorflow.
+## HelloWorld: Trainieren und anschließend Anwenden eines NN auf einem Raspi mit tensorflow.
 
 #### Voraussetzungen
 
@@ -43,13 +43,53 @@ pip3 install imageio
 
 #### jetzt kann's los gehen auf der Commandline
 
+Trainieren benötigt ca. 3000 sek auf dem Raspberry 3 (und ca. 1400 sek auf dem Raspberry 4)
+
 ``` bash
 python lauf2.py 
+#Using TensorFlow backend.
+#2019-12-14 19:53:34.283380: E tensorflow/core/platform/hadoop/hadoop_file_system.cc:132] HadoopFileSystem load error: libhdfs.so: cannot open shared object file: No such file or directory
+#Downloading data from https://s3.amazonaws.com/img-datasets/mnist.npz
+#11493376/11490434 [==============================] - 5s 0us/step
+#WARNING:tensorflow:From /home/pi/KI/env/lib/python3.7/site-packages/tensorflow_core/python/ops/resource_variable_ops.py:1630: calling BaseResourceVariable.__init__ (from tensorflow.python.ops.resource_variable_ops) with constraint is deprecated and will be removed in a future version.
+#Instructions for updating:
+#If using Keras pass *_constraint arguments to layers.
+#WARNING:tensorflow:From /home/pi/KI/env/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:4070: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+#
+#WARNING:tensorflow:From /home/pi/KI/env/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:422: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+#
+#Train on 60000 samples, validate on 10000 samples
+#Epoch 1/2
+#2019-12-14 19:54:32.464040: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 11075584 exceeds 10% of system memory.
+#2019-12-14 19:54:36.963308: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 18874368 exceeds 10% of system memory.
+#2019-12-14 19:54:43.404929: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 9437184 exceeds 10% of system memory.
+#2019-12-14 19:54:43.408007: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 18874368 exceeds 10% of system memory.
+#2019-12-14 19:54:44.196058: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 11075584 exceeds 10% of system memory.
+#60000/60000 [==============================] - 1473s 25ms/step - loss: 0.2082 - accuracy: 0.9359 - val_loss: 0.0479 - val_accuracy: 0.9840
+#Epoch 2/2
+#60000/60000 [==============================] - 1611s 27ms/step - loss: 0.0717 - accuracy: 0.9782 - val_loss: 0.0395 - val_accuracy: 0.9860
+```
+
+Anwenden
+
+``` bash
 python use1.py 
+#Using TensorFlow backend.
+#2019-12-14 20:47:16.444781: E tensorflow/core/platform/hadoop/hadoop_file_system.cc:132] HadoopFileSystem load error: libhdfs.so: cannot open shared object file: No such file or directory
+#WARNING:tensorflow:From /home/pi/KI/env/lib/python3.7/site-packages/tensorflow_core/python/ops/resource_variable_ops.py:1630: calling BaseResourceVariable.__init__ (from tensorflow.python.ops.resource_variable_ops) with constraint is deprecated and will be removed in a future version.
+#Instructions for updating:
+#If using Keras pass *_constraint arguments to layers.
+#WARNING:tensorflow:From /home/pi/KI/env/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:4070: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+#
+#WARNING:tensorflow:From /home/pi/KI/env/lib/python3.7/site-packages/keras/backend/tensorflow_backend.py:422: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+#
+#[4]
+#[[2.6218304e-06 2.5204520e-06 9.7428328e-06 1.5765105e-05 9.9699748e-01
+#  1.2196848e-03 1.4060701e-03 1.8572458e-04 5.3766740e-05 1.0665286e-04]]
 ```
 
 
-## pm-Prognose mit NN 
+## Wetter: pm-Prognose mit NN 
 Könnte ein NN aus unseren Wetterdaten: tmp, hum, bmp, pm25 Daten und Wochentag von morgens um 6Uhr auf die pm25 Werte von 12Uhr des selben Tages schließen?
 (tmp, hum, bmp, pm25, dow)[06] -> (pm25)[12]
 
@@ -78,4 +118,7 @@ changes	date			tmp	hum	bmp	pm25	dow	map to	pm25
 18	2019-11-21 06:00:32.0	0,8	85,0	1005,0	11,5	5	-> 	12,5
 ...
 ```
+
+## Tensorflow: Mal selbst die Tensorflow Library compilieren.
+
 
