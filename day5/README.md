@@ -23,10 +23,10 @@ python --version
 ``` bash
 sudo apt update
 sudo apt install python3-pip
-sudo apt-get install python3-venv
+sudo apt install python3-venv
 sudo apt install libjpeg-dev libtiff-dev libopenjp2-7-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev tcl8.6-dev tk8.6-dev python-tk libharfbuzz-dev libfribidi-dev
-sudo apt-get install libatlas-base-dev
-sudo apt-get install libhdf5-dev
+sudo apt install libatlas-base-dev
+sudo apt install libhdf5-dev
 
 
 mkdir KI
