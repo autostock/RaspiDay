@@ -121,4 +121,67 @@ changes	date			tmp	hum	bmp	pm25	dow	map to	pm25
 
 ## Tensorflow: Mal selbst die Tensorflow Library compilieren.
 
+Problem: TensorFlow aus den Ubuntu-binaries läßt sich auf Notebook mit Core2Duo-Prozessor nicht betreiben, da AVX(?)-Maschinencode nicht ausgeführt werden kann.
+
+
+#### Kompilierung aus Quellen nach tensorflow.org mit bazel-1.1.0
+
+Ist mehrfach nach mehreren Stunden abgebrochen. Zu wenig Ressourcen? (4GB RAM, 15GB SSD frei) Ungenügender Prozessor? (Core2Duo 64bit)
+
+
+#### Aktueller Prozessor: Auf VPS mit 1GB RAM, 1core, 8GB HDD
+
+Schnell abgebrochen, wohl Speichermangel.
+
+
+#### Mehr Ressourcen: Kompilieren auf t3a.2xlarge-EC2-Instanz (unlimited, 8cores, 32GB RAM) bei AWS.amazon.com:
+
+1. Umgebung nach tensorflow.org, ohne virtual environment
+2. target-Option für bazel: --cops=-march=core2
+
+-> FAILED: Build did NOT complete successfully, evtl. Python2/3 Inkompatibilität?
+
+bazel --host_force_python=PY3 build --copt=-march=core2 //tensorflow/tools/pip_package:build_pip_package &
+
+-> Fatal error: can't close bazel-out/host/bin/external/llvm/_objs/selection_dag/DAGCombiner.pic.o: No space left on device
+
+-> Platte (8GB) voll!
+
+
+#### c5d4xl-Instanz, 320GB Platte 32GB RAM
+
+``` bash
+sudo apt update
+sudo apt upgrade 
+sudo apt install build-essential
+sudo apt install python3-dev python3-pip
+pip install -U --user pip six numpy wheel setuptools mock 'future>=0.17.1'
+pip install -U --user keras_applications --no-deps
+pip install -U --user keras_preprocessing --no-deps
+pip install -U --user keras_applications --no-deps
+sudo apt install curl
+curl https://bazel.build/bazel-release.pub.gpg | sudo apt-key add -
+echo "deb [arch=amd64] https://storage.googleapis.com/bazel-apt stable jdk1.8" | sudo tee /etc/apt/sources.list.d/bazel.list
+sudo apt update && sudo apt install bazel-1.1.0
+git clone https://github.com/tensorflow/tensorflow.git
+cd tensorflow
+sudo ln /usr/bin/bazel-1.1.0 /usr/bin/bazel
+./configure 
+bazel build --copt=-march=core2 //tensorflow/tools/pip_package:build_pip_package &
+```
+
+-> kompiliert
+
+-> auf PC nicht installierbar, PyCObject-Problem: Probleme zwischen Python 2 und 3 ?!
+
+Anstatt dem auf den Grund zu gehen, aus dem Gelernten noch ein Mal auf PC versuchen:
+
+
+#### PC (4GB RAM, 15GB SSD frei, Core2Duo 64bit) mit 5GB Auslagerungsdatei kompiliert es in 16h.
+
+-> Erfolg.
+
+-> Training lauf2.py dauert ca. 25 Minuten je Epoche. Z.Vgl. Raspi3 - 25min, Raspi4 - 3min.
+
+
 
