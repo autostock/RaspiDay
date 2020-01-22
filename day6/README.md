@@ -43,22 +43,22 @@ pip3 install imageio
 
 #### Aufgaben
 
-##### Zahlenfolgen
-Funktion:
-Wir trainieren das NN mit 50 x aus [0, 100[ für f(x)=5*x^2 - 3*x + 4.
-Wir trainieren das NN mit 50 x aus [-10, +10[ für f(x)=sin(x).
+##### 1) Zahlenfolgen
+Funktion:<br>
+Wir trainieren das NN mit 50 x aus [0, 100[ für f(x)=5*x^2 - 3*x + 4.<br>
+Wir trainieren das NN mit 50 x aus [-10, +10[ für f(x)=sin(x).<br>
 
-Fibonacci:
+Fibonacci:<br>
 Wir trainieren das NN mit 50 n aus [2, 100[ für a(n)=a(n-1)+a(n-2) und a(0)=0, a(1)=1.
 
-#####  Wochentag: dow in 1 ... 7 (1 == Sonntag)
+##### 2) Wochentag: dow in 1 ... 7 (1 == Sonntag)
 Wir trainieren das NN mit einem Datum aus 2020 d.h. zwei Input Nodes (Monat, Tag) und das NN soll lernen welcher Wochentag das ist. Dazu bedient es 7 Output Nodes. Beispiel, der 25 Januar ist ein Samstag: ( 1, 25) -> 7
 
 
-#####  Wetterprognose
+##### 3) Wetterprognose
 Andreas und ich haben 2019 für Nippes Wetterdaten inkl. Feinstaubbelastung gesammelt. (Siehe https://github.com/autostock/RaspiDay/tree/master/day6/Wetter) Die KI soll aus den Wetterdaten für 6 Uhr die Feinstaubbelastung für 12 Uhr des selben Tages prognostizieren.
 
-Könnte ein NN aus unseren Wetterdaten: tmp, hum, bmp, pm25 Daten und Wochentag von morgens um 6Uhr auf die pm25 Werte von 12Uhr des selben Tages schließen?
+Könnte ein NN aus unseren Wetterdaten: tmp, hum, bmp, pm25 Daten und Wochentag von morgens um 6Uhr auf die pm25 Werte von 12Uhr des selben Tages schließen?<br>
 (tmp, hum, bmp, pm25, dow)[06] -> (pm25)[12]
 
 Beispiel:
@@ -88,6 +88,6 @@ changes	date			tmp	hum	bmp	pm25	dow	map to	pm25
 ```
 
 
-##### Garagentor auf oder zu?
+##### 4) Garagentor auf oder zu?
 Ich habe Fotos einer fest installierten WEB Cam die eine Garage Tag und Nacht (IR Licht) überwacht. Die KI soll unabhängig von den Lichtverhältnissen lernen ob das abgebildete Garagentor auf oder zu ist.
 
