@@ -43,7 +43,7 @@ pip3 install imageio
 
 #### jetzt kann's los gehen auf der Commandline
 
-Trainieren benötigt ca. 3000 sek auf dem Raspberry 3 (und ca. 1400 sek auf dem Raspberry 4)
+Trainieren benötigt ca. 3000 sek auf dem Raspberry 3 (und ca. 1400 sek auf dem Raspberry 4) bei nur 2 Epochen. Also ca. 1500 sek pro Epoche. Zwei Epochen reichen aber für die Güte des NN erst Mal aus.
 
 ``` bash
 python lauf2.py 

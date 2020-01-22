@@ -146,7 +146,7 @@ convert -threshold 40% -negate -extract '500x500+1400+1000' -resize 28x28 $dir/$
 
 ### Das trainierte NN auf dem Raspberry anwenden
 VORAB:
-Es stellt sich heraus, dass der Raspberry (noch) nicht dazu in der Lage ist. Denn (siehe auch oben):
+Es stellt sich heraus, dass der Raspberry, so wie wir in nutzten, nicht dazu in der Lage war. Denn (siehe auch oben):
 - mongoDB wird nicht mehr für 32 Bit (Raspian OS) gepflegt.
 - Im 64 Bit OS (hier Ubuntu Mate) scheitert die Installation von tensorflow
 
@@ -158,6 +158,8 @@ Raspberry die Ziffern (hoffentlich) richtig erkennen.
 
 Letztendlich haben wir es auf einem Ubuntu Laptop hin bekommen. Die Ziffer 5 wurde Hand geschrieben und davon ein Foto (foto5.png) gemacht. Dann ein wenig Bildverarbeitung (siehe oben) um es an das von MNIST geforderte Format an zu passen.
 Das Resultat wurde in dig5.png abgespeichert, dem von uns trainierten Netz zum Analysieren angeboten und - siehe da - es hat die 5 erkannt! :-)
+
+Siehe aber auch day5, an dem wir einen zweiten Anlauf genommen haben und es schließlich sogar im Raspian OS ans Laufen brachten.
 
 
 ## Literatur
