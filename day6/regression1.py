@@ -15,24 +15,26 @@ from keras.wrappers.scikit_learn import KerasRegressor
 
 
 # load dataset
-#dataframe = pandas.read_csv("regression1.csv", delim_whitespace=True, header=None)
-#dataset = dataframe.values
+dataframe = pandas.read_csv("regression1.csv", delim_whitespace=True, header=None)
+dataset = dataframe.values
 # split into input (X) and output (Y) variables
-#X = dataset[:,0:1]
-#Y = dataset[:,1]
+DX = dataset[:,0:1]
+DY = dataset[:,1]
 
 X=[]
-Y=[]
+Y=[[]]
 for i in range(100):
     x=i/5.0-5.0
     X.append(x)
-    Y.append(5*x*x - 3*x+4)
+    Ye=5*x*x - 3*x+4
+    Y[0].append(Ye)
 
 #normalize to [0, 1]
 X=X#/100
 Y=Y#/48712
 
 print(X)
+print(DX)
 print(Y)
 
 x=20.0
@@ -48,7 +50,7 @@ model.add(Dense(1, kernel_initializer='normal'))
 model.compile(loss='mean_squared_error', optimizer='adam')
 
 
-model.fit(X, Y, nb_epoch=20000, verbose=2)
+model.fit(X, Y, nb_epoch=20000, verbose=0)
 
 predictions= model.predict(X)
 print(predictions)

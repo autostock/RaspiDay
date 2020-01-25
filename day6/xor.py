@@ -13,8 +13,11 @@ training_data = np.array([[0,0],[0,1],[1,0],[1,1]], "float32")
 # the four expected results in the same order
 target_data = np.array([[0],[1],[1],[0]], "float32")
 
+print(training_data)
+print(target_data)
+
 model = Sequential()
-model.add(Dense(16, input_dim=3, activation='relu'))
+model.add(Dense(16, input_dim=2, activation='relu'))
 model.add(Dense(1, activation='sigmoid'))
 
 model.compile(loss='mean_squared_error',
