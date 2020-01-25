@@ -8,7 +8,7 @@ from keras.models import Sequential
 from keras.layers.core import Dense
 
 # the four different states of the XOR gate
-training_data = np.array([[0,0, 4],[0,1, 5],[1,0, 6],[1,1, 7]], "float32")
+training_data = np.array([[0,0],[0,1],[1,0],[1,1]], "float32")
 
 # the four expected results in the same order
 target_data = np.array([[0],[1],[1],[0]], "float32")
