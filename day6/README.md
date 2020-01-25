@@ -45,11 +45,11 @@ pip3 install imageio
 
 ##### 1) Zahlenfolgen
 Funktion:<br>
-Wir trainieren das NN mit 50 x aus [0, 100[ für f(x)=5*x^2 - 3*x + 4.<br>
-Wir trainieren das NN mit 50 x aus [-10, +10[ für f(x)=sin(x).<br>
+Wir trainieren das NN mit 50 x aus [0, 100[ für f(x) = 5*x^2 - 3*x + 4.<br>
+Wir trainieren das NN mit 50 x aus [-10, +10[ für f(x) = sin(x).<br>
 
 Fibonacci:<br>
-Wir trainieren das NN mit 50 n aus [2, 100[ für a(n)=a(n-1)+a(n-2) und a(0)=0, a(1)=1.
+Wir trainieren das NN mit 50 n aus [2, 100[ für a(n)=a(n-1)+a(n-2) mit a(0)=0, a(1)=1.
 
 ##### 2) Wochentag: dow in 1 ... 7 (1 == Sonntag)
 Wir trainieren das NN mit einem Datum aus 2020 d.h. zwei Input Nodes (Monat, Tag) und das NN soll lernen welcher Wochentag das ist. Dazu bedient es 7 Output Nodes. Beispiel, der 25 Januar ist ein Samstag: ( 1, 25) -> 7
