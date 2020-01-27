@@ -109,8 +109,7 @@ f(i) = fib(i)
 - regression3.py: wie regression2.py 
 
 Wochentag
-- wochentag-tf.py: Versuch mit Keras/Tensorflow die Abbildung (Monat, Tag) -> (dow) zu lernen. Da hatten wir wenig Erfolg.
-- 2020dow.csv: Tupel (Monat, Tag, dow)
+- 2020dow.csv: 366 Tupel (Monat, Tag, dow) für alle Tage in 2020
 ``` bash
 01,01,3
 01,02,4
@@ -127,7 +126,8 @@ Wochentag
 12,30,3
 12,31,4
 ```
-
+- wochentag-tf.py: Versuch mit Keras/Tensorflow die Abbildung (Monat, Tag) -> (dow) zu lernen. Da hatten wir wenig Erfolg.
+- wochentag-tf2.py: Aber so geht's easy! (Monat, Tag) wird in eine 12 + 31 langen 0-Vektor gemapt. Mit einer 1 am Monatsindex und einer 1 am Tagindex. 
 
 ## Links
 - xor: https://blog.thoughtram.io/machine-learning/2016/11/02/understanding-XOR-with-keras-and-tensorlow.html

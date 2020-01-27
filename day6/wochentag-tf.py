@@ -42,7 +42,7 @@ print(Y[24])
 
 # create model
 model = Sequential()
-model.add(Dense(10, input_dim=2, activation='relu'))
+model.add(Dense(20, input_dim=2, activation='relu'))
 model.add(Dense(70, activation='softmax'))
 model.add(Dense(10, activation='relu'))
 #model.add(Dense(1, kernel_initializer='normal'))
