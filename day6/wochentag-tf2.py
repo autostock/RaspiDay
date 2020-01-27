@@ -31,7 +31,7 @@ def prediction(m, d):
 
 
 inf=open('2020dow.csv','r')  # Monat, Tag, dow
-X0 = np.genfromtxt (inf, delimiter=",")
+X0 = np.genfromtxt (inf, delimiter=";")
 inf.close()
 
 print(X0)
@@ -40,7 +40,7 @@ print(X0)
 xl=[]
 yl=[]
 trainingdata=len(X0)
-for i in range(0, trainingdata):
+for i in range(trainingdata):
     list=X0[i].tolist()
     xl.append(flatten(list[0], list[1]))
     yl.append([list[2]])
@@ -48,6 +48,7 @@ for i in range(0, trainingdata):
 X=np.array(xl)
 Y=np.array(yl)
 Y= to_categorical(yl, 7)
+
 
 # create model
 model = Sequential()
@@ -79,3 +80,4 @@ print('%d errors in %d training datas' % (error, len(X)))
 
 print('%d.%d actual is %s' % (25, 1, prediction(1, 25)))   # 25.Januar
 
+print(X[0])

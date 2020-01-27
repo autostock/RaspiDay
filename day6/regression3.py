@@ -97,7 +97,7 @@ while i>=0:
 best.set_weights(bestWeights)
 
 print('')
-print('MSE = %f' % (bestloss))
+print('MSE=%f' % (bestloss))
 predictions= best.predict(X)
 for i in range(100):
     print(X[i], (ysacle*Y[i]).round(), (ysacle*predictions[i][0]).round())

@@ -12,7 +12,7 @@ import numpy as np
 import random
 
 inf=open('2020dow.csv','r')  # Tag,Monat
-X0 = np.genfromtxt (inf, delimiter=",")
+X0 = np.genfromtxt (inf, delimiter=";")
 inf.close()
 
 print(X0)
