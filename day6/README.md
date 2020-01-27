@@ -43,7 +43,7 @@ pip3 install imageio
 
 #### Aufgaben
 
-##### 1) Zahlenfolgen
+##### 1. Zahlenfolgen
 Funktion:<br>
 Wir trainieren das NN mit 50 x aus [0, 100[ für f(x) = 5*x^2 - 3*x + 4.<br>
 Wir trainieren das NN mit 50 x aus [-10, +10[ für f(x) = sin(x).<br>
@@ -51,11 +51,11 @@ Wir trainieren das NN mit 50 x aus [-10, +10[ für f(x) = sin(x).<br>
 Fibonacci:<br>
 Wir trainieren das NN mit 50 n aus [2, 100[ für a(n)=a(n-1)+a(n-2) mit a(0)=0, a(1)=1.
 
-##### 2) Wochentag: dow in 1 ... 7 (1 == Sonntag)
-Wir trainieren das NN mit einem Datum aus 2020 d.h. zwei Input Nodes (Monat, Tag) und das NN soll lernen welcher Wochentag das ist. Dazu bedient es 7 Output Nodes. Beispiel, der 25 Januar ist ein Samstag: ( 1, 25) -> 7
+##### 2. Wochentag: dow in 0 ... 6 (0 == Sonntag)
+Wir trainieren das NN mit einem Datum aus 2020 d.h. zwei Input Nodes (Monat, Tag) und das NN soll lernen welcher Wochentag das ist. Dazu bedient es 7 Output Nodes. Beispiel, der 25 Januar ist ein Samstag: ( 1, 25) -> 6
 
 
-##### 3) Wetterprognose
+##### 3. Wetterprognose
 Andreas und ich haben 2019 für Nippes Wetterdaten inkl. Feinstaubbelastung gesammelt. (Siehe https://github.com/autostock/RaspiDay/tree/master/day6/Wetter) Die KI soll aus den Wetterdaten für 6 Uhr die Feinstaubbelastung für 12 Uhr des selben Tages prognostizieren.
 
 Könnte ein NN aus unseren Wetterdaten: tmp, hum, bmp, pm25 Daten und Wochentag von morgens um 6Uhr auf die pm25 Werte von 12Uhr des selben Tages schließen?<br>
@@ -88,6 +88,52 @@ changes	date			tmp	hum	bmp	pm25	dow	map to	pm25
 ```
 
 
-##### 4) Garagentor auf oder zu?
+##### 4. Garagentor auf oder zu?
 Ich habe Fotos einer fest installierten WEB Cam die eine Garage Tag und Nacht (IR Licht) überwacht. Die KI soll unabhängig von den Lichtverhältnissen lernen ob das abgebildete Garagentor auf oder zu ist.
+
+## Beschreibung einiger Dateien
+
+XOR: mit Keras/Tensorflow lernen und anwenden
+- xor.py: NN für die boolsche Funktion XOR. Mit epochs=200
+- xor2.py: Wie xor.py allerdings mit epochs=2000 UND zusätzlicher Abruchbedingung wenn binary_accuracy>0.8
+
+f(x) = 5*x^2 - 3*x + 4: mit Keras/Tensorflow lernen und anwenden
+- regression1.py: NN für obige Funktion. Mit epochs=20000; python array
+- regression1_a.py: Mit epochs=10000 aber inkrementel bis mean_squared_error < 10
+- regression1_b.py: Mit epochs=10000 aber fahre 20 Ansätze und vertiefe besten Ansatz; numpy array
+
+f(x) = sin(x)
+- regression2.py: wie regression1_b.py
+
+f(i) = fib(i)
+- regression3.py: wie regression2.py 
+
+Wochentag
+- wochentag-tf.py: Versuch mit Keras/Tensorflow die Abbildung (Monat, Tag) -> (dow) zu lernen. Da hatten wir wenig Erfolg.
+- 2020dow.csv: Tupel (Monat, Tag, dow)
+``` bash
+01,01,3
+01,02,4
+...
+01,26,0
+01,27,1
+01,28,2
+01,29,3
+01,30,4
+01,31,5
+02,01,6
+02,02,0
+...
+12,30,3
+12,31,4
+```
+
+
+## Links
+- xor: https://blog.thoughtram.io/machine-learning/2016/11/02/understanding-XOR-with-keras-and-tensorlow.html
+- regression: https://machinelearningmastery.com/regression-tutorial-keras-deep-learning-library-python/
+- Eigene Bilder klassifizieren: https://www.pyimagesearch.com/2018/09/10/keras-tutorial-how-to-get-started-with-keras-deep-learning-and-python/
+
+- Guide to reinforcement learning: https://blog.thoughtram.io/machine-learning/2018/02/28/a-simple-guide-to-reinforcement-learning.html
+
 

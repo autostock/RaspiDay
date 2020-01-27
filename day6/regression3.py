@@ -36,15 +36,12 @@ def f(x):
         x1=x2
     return 1.0*x2
 
-X=[]
-Y=[]
+X=np.zeros((100, 1), "float32")
+Y=np.zeros((100, 1), "float32")
 for i in range(100):
     x=i
-    X.append(x)
-    Y.append(f(x))
-
-X = np.array(X, "float32")
-Y = np.array(Y, "float32")
+    X[i, 0]=x
+    Y[i, 0]=f(x)
 
 ysacle=2.4e+16
 #normalize to some sensefull intervall 
@@ -98,8 +95,9 @@ while i>=0:
     i+=1
 
 best.set_weights(bestWeights)
-print('betterMSE=%f' % (bestloss))
 
+print('')
+print('MSE = %f' % (bestloss))
 predictions= best.predict(X)
 for i in range(100):
     print(X[i], (ysacle*Y[i]).round(), (ysacle*predictions[i][0]).round())

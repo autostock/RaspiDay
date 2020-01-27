@@ -1,18 +1,5 @@
 # Thema KI
 
-## Beschreibung einiger Dateien
-
-- nn.ods: Spreadsheet zum hands-on design einfacher NNs (perceptron für AND, NAND, OR und 3 layer NN für XOR).
--- Visualisierung von signum, sigmoid, Gauss (als Ableitung der sigmoid) und simplified-sigmoid
--- Visiualisierung des gradient descent bei der automatischen Findung von NN Gewichten.
-- activate.bas: Im obigen Spreadsheet wird eine selbst definierte Funktion genutzt. Dies ist der Quellcode dazu.
-- fünf.png: Orginalfoto der 5 vor der Bearbeitung nach dig5.png
-- dig5.png: 28x28 große weiss auf schwarz handgeschrieben 5
-- xor.c: Ist ein C++ Programm mit fertig trainierten NN für XOR. [Try it online](https://tio.run/##ZVLBcpswED2jr9hJphkDMkjYbtJi0nMu7rEHlwMGxVYGCwaEk4yHb3dXwjhOOmMj7e7bt7tPm9f1dJvnp9OtVHnZFQKWrS5kFeweySdXKTeffftM74yH6PdaFOIZWt10uYajVBoKUetdDOZaZu@iWXOWxlBU3aYU8CrkdqfXM3T1sFrFJK9Uq8eoSKLgnj9ED@Y/X/xg8wUFLfa1aDLdNSJhAXuIyS2WlEo4rdzuK1lM3lyY8ICF5uPX1etEUJi@hVeJrusSMhTxQByyssu0mKxWcKeEpmP5XJTlOnXhSBzT/R/ba8Io/O7wiAlxnqsGJnYycRAlJMDj83UJyBScZ7cu37dMlupJIRZZYrTxAD@x8EEfi57yNHYcDF9KvGAKi/FYfsWinC8ju3PuvYWB8izw0LvvIzQMYSOz1mAv3HLglv9zmz5AGvZ27PIrJXiDUk/Kl6mZyLEmzuW/pEg8PkvrmmBPzK8R@AwK7kZkCjHpUdEDAuGtalYr21dG7d5s7GytzrTMcUtMF8lxRiH0bKdeCMeIRpT3FAscQ08qJRoOqipEZIdNvHDKApvxytDwWXBvDT5E7k0ifEqcXSXOL4lofL8kIsvinFh1WjSRTZxfJS4sNjJYHnBrzAZjQXuc17netMiPfJ4mx4xuTKhucPTnyc03KwjgMX3E7191Q40uG/qxuHZpDYe7ZukSy/5iPzmg3D0hRr99JtWgZ7PNEbnLGs/cD@ftHgRnlJkXGg3@YfDrCLeR/nT6Bw)
-- MNIST fur Einsteiger.ipynb: Notebook für Keras zum trainieren eines NN auf MNIST Basis
-- MNIST fur Einsteiger.py: Wie oben nur als direktes python Programm.
-- use1.py: Minimalprogramm um das durch tensorflow berechnete NN zum Erkennen (siehe oben) zu nutzen. (Hier soll unsere Zahl 5 erkannt werden.)
-
 ## KI Google Colab
 
 KI lernen, ganz einfach und umsonst mit Google's TPU
@@ -161,8 +148,21 @@ Das Resultat wurde in dig5.png abgespeichert, dem von uns trainierten Netz zum A
 
 Siehe aber auch day5, an dem wir einen zweiten Anlauf genommen haben und es schließlich sogar im Raspian OS ans Laufen brachten.
 
+## Beschreibung einiger Dateien
 
-## Literatur
+- nn.ods: Spreadsheet zum hands-on design einfacher NNs (perceptron für AND, NAND, OR und 3 layer NN für XOR).
+- - Visualisierung von signum, sigmoid, Gauss (als Ableitung der sigmoid) und simplified-sigmoid
+- - Visiualisierung des gradient descent bei der automatischen Findung von NN Gewichten.
+- activate.bas: Im obigen Spreadsheet wird eine selbst definierte Funktion genutzt. Dies ist der Quellcode dazu.
+- fünf.png: Orginalfoto der 5 vor der Bearbeitung nach dig5.png
+- dig5.png: 28x28 große weiss auf schwarz handgeschrieben 5
+- xor.c: Ist ein C++ Programm mit fertig trainierten NN für XOR. [Try it online](https://tio.run/##ZVLBcpswED2jr9hJphkDMkjYbtJi0nMu7rEHlwMGxVYGCwaEk4yHb3dXwjhOOmMj7e7bt7tPm9f1dJvnp9OtVHnZFQKWrS5kFeweySdXKTeffftM74yH6PdaFOIZWt10uYajVBoKUetdDOZaZu@iWXOWxlBU3aYU8CrkdqfXM3T1sFrFJK9Uq8eoSKLgnj9ED@Y/X/xg8wUFLfa1aDLdNSJhAXuIyS2WlEo4rdzuK1lM3lyY8ICF5uPX1etEUJi@hVeJrusSMhTxQByyssu0mKxWcKeEpmP5XJTlOnXhSBzT/R/ba8Io/O7wiAlxnqsGJnYycRAlJMDj83UJyBScZ7cu37dMlupJIRZZYrTxAD@x8EEfi57yNHYcDF9KvGAKi/FYfsWinC8ju3PuvYWB8izw0LvvIzQMYSOz1mAv3HLglv9zmz5AGvZ27PIrJXiDUk/Kl6mZyLEmzuW/pEg8PkvrmmBPzK8R@AwK7kZkCjHpUdEDAuGtalYr21dG7d5s7GytzrTMcUtMF8lxRiH0bKdeCMeIRpT3FAscQ08qJRoOqipEZIdNvHDKApvxytDwWXBvDT5E7k0ifEqcXSXOL4lofL8kIsvinFh1WjSRTZxfJS4sNjJYHnBrzAZjQXuc17netMiPfJ4mx4xuTKhucPTnyc03KwjgMX3E7191Q40uG/qxuHZpDYe7ZukSy/5iPzmg3D0hRr99JtWgZ7PNEbnLGs/cD@ftHgRnlJkXGg3@YfDrCLeR/nT6Bw)
+- MNIST fur Einsteiger.ipynb: Notebook für Keras zum trainieren eines NN auf MNIST Basis
+- MNIST fur Einsteiger.py: Wie oben nur als direktes python Programm.
+- use1.py: Minimalprogramm um das durch tensorflow berechnete NN zum Erkennen (siehe oben) zu nutzen. (Hier soll unsere Zahl 5 erkannt werden.)
+
+
+## Links
 
 - Codebeispiele stehen unter: https://github.com/autostock/RaspiDay/tree/master/day4
 - http://neuralnetworksanddeeplearning.com/index.html

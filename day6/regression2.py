@@ -86,7 +86,7 @@ while i>=0:
 best.set_weights(bestWeights)
 
 print('')
-print('MSE=%f' % (bestloss))
+print('MSE = %f' % (bestloss))
 print('trained	target	learned')
 predictions= best.predict(X)
 for i in range(100):
