@@ -127,7 +127,7 @@ Wochentag
 12,31,4
 ```
 - wochentag-tf.py: Versuch mit Keras/Tensorflow die Abbildung (Monat, Tag) -> (dow) zu lernen. Da hatten wir wenig Erfolg.
-- wochentag-tf2.py: Aber so geht's easy! (Monat, Tag) wird in eine 12 + 31 langen 0-Vektor gemapt. Mit einer 1 am Monatsindex und einer 1 am Tagindex. 
+- wochentag-tf2.py: Aber so geht's easy! (Monat, Tag) wird in einen 12+31=43 langen 0-Vektor gemapt. Mit zwei Ausnahmen: einer 1 am Monatindex und einer 1 am Tagindex. 
 
 ## Links
 - xor: https://blog.thoughtram.io/machine-learning/2016/11/02/understanding-XOR-with-keras-and-tensorlow.html
