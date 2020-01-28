@@ -29,9 +29,15 @@ def prediction(m, d):
     v[idx]=1
     return v
 
-
+# load dataset
+# Monat;Tag;dow
+# 01;01;4
+# 01;02;5
+# ...
+# 12;30;4
+# 12;31;5
 inf=open('2020dow.csv','r')  # Monat, Tag, dow
-X0 = np.genfromtxt (inf, delimiter=";")
+X0 = np.genfromtxt (inf, delimiter=";", skip_header=1)
 inf.close()
 
 print(X0)
@@ -43,7 +49,7 @@ trainingdata=len(X0)
 for i in range(trainingdata):
     list=X0[i].tolist()
     xl.append(flatten(list[0], list[1]))
-    yl.append([list[2]])
+    yl.append([list[2]-1])
 
 X=np.array(xl)
 Y=np.array(yl)
@@ -75,9 +81,7 @@ for i in range(0, len(X)):
         print('problem %d %d:\texpected=%s; actual=%s' % (m, d, Y[i], y))
         error+=1
 
-print('%d errors in %d training datas' % (error, len(X)))
+print('%d errors for %d training data' % (error, len(X)))
 
 
 print('%d.%d actual is %s' % (25, 1, prediction(1, 25)))   # 25.Januar
-
-print(X[0])

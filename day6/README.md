@@ -51,8 +51,8 @@ Wir trainieren das NN mit 50 x aus [-10, +10[ für f(x) = sin(x).<br>
 Fibonacci:<br>
 Wir trainieren das NN mit 50 n aus [2, 100[ für a(n)=a(n-1)+a(n-2) mit a(0)=0, a(1)=1.
 
-##### 2. Wochentag: dow in 0 ... 6 (0 == Sonntag)
-Wir trainieren das NN mit einem Datum aus 2020 d.h. zwei Input Nodes (Monat, Tag) und das NN soll lernen welcher Wochentag das ist. Dazu bedient es 7 Output Nodes. Beispiel, der 25 Januar ist ein Samstag: ( 1, 25) -> 6
+##### 2. Wochentag: dow in 1 ... 7 (1 == Sonntag)
+Wir trainieren das NN mit einem Datum aus 2020 d.h. zwei Input Nodes (Monat, Tag) und das NN soll lernen welcher Wochentag das ist. Dazu bedient es 7 Output Nodes. Beispiel, der 25 Januar ist ein Samstag: ( 1, 25) -> 7
 
 
 ##### 3. Wetterprognose
@@ -111,22 +111,23 @@ f(i) = fib(i)
 Wochentag
 - 2020dow.csv: 366 Tupel (Monat, Tag, dow) für alle Tage in 2020
 ``` bash
-01,01,3
-01,02,4
+Monat;Tag;dow
+01;01;4
+01;02;5
 ...
-01,26,0
-01,27,1
-01,28,2
-01,29,3
-01,30,4
-01,31,5
-02,01,6
-02,02,0
+01;25;7
+01;26;1
+01;27;2
+01;28;3
+01;29;4
+01;30;5
+01;31;6
+02;01;7
 ...
-12,30,3
-12,31,4
+12;30;4
+12;31;5
 ```
-- wochentag-tf.py: Versuch mit Keras/Tensorflow die Abbildung (Monat, Tag) -> (dow) zu lernen. Da hatten wir wenig Erfolg.
+- wochentag-tf.py: Versuch mit Keras/Tensorflow die Abbildung (Monat, Tag) -> (dow) zu lernen. Da hatten wir wenig Erfolg. Es bringt auch nichts die Werte auf [0.0, 1.0] zu normieren.
 - wochentag-tf2.py: Aber so geht's easy! (Monat, Tag) wird in einen 12+31=43 langen 0-Vektor gemapt. Mit zwei Ausnahmen: einer 1 am Monatindex und einer 1 am Tagindex. 
 
 ## Links

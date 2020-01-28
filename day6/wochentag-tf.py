@@ -11,8 +11,15 @@ from keras.wrappers.scikit_learn import KerasRegressor
 import numpy as np
 import random
 
-inf=open('2020dow.csv','r')  # Tag,Monat
-X0 = np.genfromtxt (inf, delimiter=";")
+# load dataset
+# Monat;Tag;dow
+# 01;01;4
+# 01;02;5
+# ...
+# 12;30;4
+# 12;31;5
+inf=open('2020dow.csv','r')  # Monat, Tag, dow
+X0 = np.genfromtxt (inf, delimiter=";", skip_header=1)
 inf.close()
 
 print(X0)
@@ -28,17 +35,11 @@ for i in range(0, trainingdata):
     #v=np.zeros(7)
     #v[round(list[2])]=1
     #yl.append(v)
-    yl.append([list[2]])
+    yl.append([list[2]-1])
 
 X=np.array(xl)
 Y=np.array(yl)
 Y= to_categorical(yl, 7)
-
-
-print(X[24])
-print(Y[24])
-
-#'''
 
 # create model
 model = Sequential()
@@ -66,4 +67,3 @@ C = np.array([[1, 26.]])  # 25.Januar
 predictions= model.predict(C)
 print(predictions)
 
-#'''
